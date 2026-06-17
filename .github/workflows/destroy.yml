@@ -1,0 +1,22 @@
+name: 'Terraform Destroy'
+
+on:
+  workflow_dispatch: # Esto activa un botón manual en la web de GitHub
+
+concurrency:
+  group: terraform-refs/heads/main
+  cancel-in-progress: false
+
+jobs:
+  destroy:
+    runs-on: ubuntu-latest
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: hashicorp/setup-terraform@v3
+      with:
+        terraform_version: "1.15.5"
+    - run: terraform init
+    - run: terraform destroy -auto-approve
