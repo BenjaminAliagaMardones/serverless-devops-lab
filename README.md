@@ -1,4 +1,4 @@
-# Laboratorio DevOps: AWS Lambda Serverless (con Docker), Terraform y Ansible
+# DevOps Lab — API Serverless en AWS con Terraform y Docker
 
 ![Terraform](https://img.shields.io/badge/Terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white)
 ![Ansible](https://img.shields.io/badge/Ansible-EE0000?style=for-the-badge&logo=ansible&logoColor=white)
